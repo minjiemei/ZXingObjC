@@ -1,10 +1,11 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
     name: "ZXingObjC",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v11),
+        .macOS(.v10_13)
     ],
     products: [
         .library(
@@ -17,7 +18,16 @@ let package = Package(
             path: "ZXingObjC",
             publicHeadersPath: ".",
             cSettings: [
-                .headerSearchPath(".")
+                .headerSearchPath("."),
+                .headerSearchPath("core"),
+                .headerSearchPath("cpp"),
+                .headerSearchPath("aztec"),
+                .headerSearchPath("datamatrix"),
+                .headerSearchPath("maxicode"),
+                .headerSearchPath("multi"),
+                .headerSearchPath("oned"),
+                .headerSearchPath("pdf417"),
+                .headerSearchPath("qrcode"),
             ]
         )
     ]
